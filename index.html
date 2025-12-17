@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能工程助手 - 在线测试</title>
+    <style>
+        /* 页面基础样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5; /* 浅灰背景，保护视力 */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 模拟官网顶部的导航栏 */
+        .navbar {
+            background-color: #ffffff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* 聊天窗口的容器 */
+        .chat-container {
+            flex: 1; /* 让容器填满剩余空间 */
+            width: 100%;
+            max-width: 1000px; /* 电脑上限制最大宽度，避免太宽难看 */
+            margin: 20px auto; /* 居中显示 */
+            background: #fff;
+            border-radius: 12px; /* 圆角 */
+            overflow: hidden; /* 防止iframe超出圆角 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 添加一点阴影，更有质感 */
+        }
+
+        /* 针对手机屏幕的优化 */
+        @media (max-width: 768px) {
+            .chat-container {
+                margin: 0; /* 手机上取消边距 */
+                border-radius: 0; /* 手机上取消圆角 */
+                max-width: 100%;
+                height: 100vh; /* 占满全屏 */
+            }
+            .navbar {
+                display: none; /* 手机上测试时，可以隐藏导航栏让对话框更大，如果想显示删掉这行即可 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">某某创新 | 产品工程中心</div>
+        <div style="font-size: 0.9rem; color: #666;">DeepSeek 驱动测试版</div>
+    </div>
+
+    <div class="chat-container">
+        <iframe
+            src="https://udify.app/chatbot/xx7bN1iSHhpxgZqp"
+            style="width: 100%; height: 100%; min-height: 700px; border: none;"
+            frameborder="0"
+            allow="microphone">
+        </iframe>
+    </div>
+
+</body>
+</html>
