@@ -3,72 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智能工程助手 - 在线测试</title>
+    <title>Geniotek AI Assistant - Test Console</title>
     <style>
-        /* 页面基础样式 */
-        body {
+        /* 基础重置 */
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f0f2f5; /* 浅灰背景，保护视力 */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background-color: #f4f4f7; /* 浅灰色背景，护眼 */
         }
 
-        /* 模拟官网顶部的导航栏 */
-        .navbar {
-            background-color: #ffffff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        /* 顶部导航栏样式 */
+        header {
+            background-color: #1a1a1a; /* 深色背景体现专业感 */
+            color: #ffffff;
+            padding: 15px 20px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
-        .logo {
-            font-weight: bold;
+
+        header h1 {
+            margin: 0;
             font-size: 1.2rem;
-            color: #333;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
-        /* 聊天窗口的容器 */
+        header .status {
+            font-size: 0.8rem;
+            color: #4caf50; /* 绿色表示在线 */
+            border: 1px solid #4caf50;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* 聊天窗口容器 */
         .chat-container {
-            flex: 1; /* 让容器填满剩余空间 */
-            width: 100%;
-            max-width: 1000px; /* 电脑上限制最大宽度，避免太宽难看 */
-            margin: 20px auto; /* 居中显示 */
-            background: #fff;
-            border-radius: 12px; /* 圆角 */
-            overflow: hidden; /* 防止iframe超出圆角 */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 添加一点阴影，更有质感 */
+            max-width: 1200px; /* 限制最大宽度，大屏不至于太宽 */
+            margin: 20px auto; /* 上下留白，水平居中 */
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* 轻微阴影 */
+            border-radius: 8px;
+            overflow: hidden; /* 防止iframe溢出圆角 */
+            height: calc(100vh - 100px); /* 动态计算高度：屏幕高度减去头部和边距 */
+            min-height: 700px; /* 保持您要求的最小高度 */
         }
 
-        /* 针对手机屏幕的优化 */
+        /* 针对移动端的适配 */
         @media (max-width: 768px) {
             .chat-container {
-                margin: 0; /* 手机上取消边距 */
-                border-radius: 0; /* 手机上取消圆角 */
-                max-width: 100%;
-                height: 100vh; /* 占满全屏 */
+                margin: 0;
+                border-radius: 0;
+                height: calc(100vh - 60px);
+                min-height: auto; /* 移动端取消最小高度限制，适应屏幕 */
             }
-            .navbar {
-                display: none; /* 手机上测试时，可以隐藏导航栏让对话框更大，如果想显示删掉这行即可 */
+            body {
+                background-color: #fff;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="logo">某某创新 | 产品工程中心</div>
-        <div style="font-size: 0.9rem; color: #666;">DeepSeek 驱动测试版</div>
-    </div>
+    <header>
+        <h1>GENIOTEK Ideas to Market</h1>
+        <span class="status">System Online</span>
+    </header>
 
     <div class="chat-container">
         <iframe
             src="https://udify.app/chatbot/xx7bN1iSHhpxgZqp"
-            style="width: 100%; height: 100%; min-height: 700px; border: none;"
+            style="width: 100%; height: 100%;"
             frameborder="0"
             allow="microphone">
         </iframe>
